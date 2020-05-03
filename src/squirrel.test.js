@@ -8,19 +8,36 @@ const createAPI = bars => ({
   getNumberOfBars: () => bars.length
 })
 
-describe('Level 1', () => {
+describe('Level 1 - [6, 4, 14, 6, 8, 13, 9, 7, 10, 6, 12]', () => {
   const API = createAPI([6, 4, 14, 6, 8, 13, 9, 7, 10, 6, 12])
 
   it('the max number of jumps should be 6', () => {
     expect(SUT(API).maxNumberOfJumps()).to.equal(6)
   })
 
-  it('the steps should be correct', () => {
+  it('the steps should be [10, 8, 6, 4, 3, 1]', () => {
     const squirrel = SUT(API)
     const expectedPath = [10, 8, 6, 4, 3, 1]
 
     expectedPath.forEach((step, i) =>
       expect(squirrel.positionAtStep(i)).to.equal(step)
     )
+  })
+})
+
+describe('Level 2 - [7, 6, 5, 4, 3, 2, 1]', () => {
+  const API = createAPI([7, 6, 5, 4, 3, 2, 1])
+
+  it('the max number of jumps should be 7', () => {
+    expect(SUT(API).maxNumberOfJumps()).to.equal(7)
+  })
+
+  it('the steps should be [0, 1, 2, 3, 4, 5, 6]', () => {
+    const squirrel = SUT(API)
+    const expectedPath = [0, 1, 2, 3, 4, 5, 6]
+
+    expectedPath.forEach((step, i) => {
+      expect(squirrel.positionAtStep(i)).to.equal(step)
+    })
   })
 })
