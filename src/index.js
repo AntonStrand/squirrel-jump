@@ -2,8 +2,6 @@
 
 const Squirrel = require('./squirrel')
 
-console.log(process.argv.slice(2))
-
 const createAPI = bars => ({
   getHeightAt: i => bars[i],
   getNumberOfBars: () => bars.length
@@ -11,7 +9,6 @@ const createAPI = bars => ({
 
 const apiFromArgs = args => {
   const parsed = args.map(Number)
-  console.log(parsed)
   if (!parsed.every(Number.isInteger)) {
     console.log('Only integers are allowed')
     process.exit(1)
