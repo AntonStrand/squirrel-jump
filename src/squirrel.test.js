@@ -41,3 +41,20 @@ describe('Level 2 - [7, 6, 5, 4, 3, 2, 1]', () => {
     })
   })
 })
+
+describe('Level 3 - [12, 2, 17, 1, 5]', () => {
+  const API = createAPI([12, 2, 17, 1, 5])
+
+  it('the max number of jumps should be 4', () => {
+    expect(SUT(API).maxNumberOfJumps()).to.equal(4)
+  })
+
+  it('the steps should be [2, 0, 1, 3]', () => {
+    const squirrel = SUT(API)
+    const expectedPath = [2, 0, 1, 3]
+
+    expectedPath.forEach((step, i) => {
+      expect(squirrel.positionAtStep(i)).to.equal(step)
+    })
+  })
+})
