@@ -58,3 +58,18 @@ describe('Level 3 - [12, 2, 17, 1, 5]', () => {
     })
   })
 })
+
+describe('Exceptions', () => {
+  const API = createAPI([])
+
+  it('should return 0 if there is no steps', () => {
+    expect(SUT(API).maxNumberOfJumps()).to.equal(0)
+  })
+
+  it('positionAtStep() should return -1 if the step is out of bound', () => {
+    const squirrel = SUT(API)
+    expect(squirrel.positionAtStep(-12)).to.equal(-1)
+    expect(squirrel.positionAtStep(0)).to.equal(-1)
+    expect(squirrel.positionAtStep(7)).to.equal(-1)
+  })
+})
