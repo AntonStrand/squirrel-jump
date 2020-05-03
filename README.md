@@ -17,7 +17,12 @@ The input is an array of integers (the bar heights). But, by treating it as a di
 
 To make the implementation easier to test, it takes the API as a dependency.
 
-## Run it
+## Run
+The application allows user input. Change `1 2 3 4 5` to any number of integers.
+1. `npm install`
+2. `npm start -- 1 2 3 4 5
+
+## Run tests
 As long as you have node and npm installed all you have to do is:
 1. `npm install`
 2. `npm test`
